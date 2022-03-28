@@ -74,11 +74,20 @@ int to_decimal(int number, int base){
     int length=0, i=0, decimal= 0, reminder, power;
     while(number !=0){
         reminder = number % 10;
+        if(reminder >= base){
+            number = 0;
+            printf("valid number\n");
+            return number;
+        }
         decimal = decimal + (reminder * square_root(base, i));
         number = number / 10;
         i++;
     }
-    return decimal;
+    if(number == 0){
+        return -1;
+    }else{
+        return decimal;
+    }
 }
 int decimal_to(int number, int base){
     char result[200];
