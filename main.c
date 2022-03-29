@@ -83,11 +83,7 @@ int to_decimal(int number, int base){
         number = number / 10;
         i++;
     }
-    if(number == 0){
-        return -1;
-    }else{
         return decimal;
-    }
 }
 int decimal_to(int number, int base){
     char result[200];
